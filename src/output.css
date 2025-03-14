@@ -484,6 +484,9 @@
   .w-1\/7 {
     width: calc(1/7 * 100%);
   }
+  .w-1\/8 {
+    width: calc(1/8 * 100%);
+  }
   .w-full {
     width: 100%;
   }
@@ -980,6 +983,9 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+  }
+  .overflow-hidden {
+    overflow: hidden;
   }
   .scroll-auto {
     scroll-behavior: auto;
@@ -1596,6 +1602,9 @@
   }
   .opacity-70 {
     opacity: 70%;
+  }
+  .opacity-100 {
+    opacity: 100%;
   }
   .mix-blend-plus-darker {
     mix-blend-mode: plus-darker;
