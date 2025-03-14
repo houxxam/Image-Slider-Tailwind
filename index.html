@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+    <link href="/src/output.css" rel="stylesheet">
+    <title>Image Slider</title>
+</head>
+<body class="bg-gray-200">
+    <div class="container mx-auto my-30 w-full lg:w-1/2">
+        <div class="slider-container">
+            
+            <div class="first-img relative">
+                <button class="prev absolute top-1/2 -translate-y-1/2 left-3"><i class="fa-solid fa-circle-chevron-left text-2xl cursor-pointer text-cyan-600  hover:text-cyan-900"></i></button>
+                <div class="absolute bottom-0 text-2xl text-center w-full bg-gradient-to-t from-black/40 to-black/5 p-6 text-white">
+                    <h2 class="img-title"></h2>
+                </div>
+                <img class="active" src="imgs/01.png" alt="Image 1">
+                
+                <button class="next absolute top-1/2 -translate-y-1/2 right-3"><i class="fa-solid fa-circle-chevron-right text-2xl cursor-pointer text-cyan-600  hover:text-cyan-900"></i></button>
+            </div>
+            <div class="imgs flex">
+            </div>
+            
+        </div>
+    </div>
+    <script src="script/app.js"></script>
+</body>
+</html>
