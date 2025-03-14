@@ -5,6 +5,9 @@ let imgs = document.querySelectorAll('.imgs img');
 let imgTitle = document.querySelector('.img-title');
 let images;
 let currentSlide = 0;
+let intervalId = 0;
+let playBtn = document.querySelector(".play-btn");
+let playIcon = document.querySelector(".play-btn i");
 
 async function getImages() {
     let response = await fetch('content.json');
@@ -33,6 +36,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         imgsContainer.appendChild(img);
         img.addEventListener('click', () => setActiveImage(i));
     }
+    autoPlay();
 });
 
 function setActiveImage(index) {
@@ -56,3 +60,25 @@ function goToPrevSlide() {
 // Event listeners for the next and previous buttons
 nextBtn.addEventListener('click', goToNextSlide);
 prevBtn.addEventListener('click', goToPrevSlide);
+
+function autoPlay(){
+    intervalId = setInterval(goToNextSlide,5000);
+}
+
+function pauseAutoPlay() {
+    // Stop the interval to pause the slideshow
+    clearInterval(intervalId);
+}
+
+playBtn.addEventListener('click', () => {
+    playIcon.classList.toggle('fa-circle-play');
+    playIcon.classList.toggle('fa-circle-pause');
+    if(playIcon.classList.contains('fa-circle-pause')){
+        console.log("autoplay");
+        autoPlay();
+    }else{
+        console.log("pause");
+        pauseAutoPlay();
+
+    }
+});
